@@ -1,0 +1,11 @@
+20140217-15:56:01: Session FIX.4.2:CLIENT->SERVER schedule is daily, 06:00:00-UTC - 23:30:00-UTC
+20140217-15:56:01: Created session: FIX.4.2:CLIENT->SERVER
+20140217-15:56:01: No responder, not sending message: 8=FIX.4.29=6835=A34=149=CLIENT52=20140217-15:56:01.92956=SERVER108=30141=Y10=237
+20140217-15:56:01: No responder, not sending message: 8=FIX.4.29=6835=A34=149=CLIENT52=20140217-15:56:01.93556=SERVER108=30141=Y10=234
+20140217-15:56:02: Initiated logon request
+20140217-15:56:02: Inferring ResetSeqNumFlag as sequence number is 1 in response to reset request
+20140217-15:56:02: Logon contains ResetSeqNumFlag=Y, resetting sequence numbers to 1
+20140217-15:56:02: Received logon
+20140217-15:56:20: Initiated logout request
+20140217-15:56:20: Received logout response
+20140217-15:56:20: Already disconnected: Received logout response

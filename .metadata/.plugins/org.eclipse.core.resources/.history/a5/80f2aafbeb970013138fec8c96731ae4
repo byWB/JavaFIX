@@ -1,0 +1,10 @@
+Bitcoin
+
+
+ - each user has a private + public key combination (their wallet), and can create an address.
+ 
+ - Users trade their coins using the private/public key combination, central FIX verifies the transactions.
+ 
+ - I use my private key to sign and you dissemble with my public key - my private key is secret and complicated and so no one can fake messages from me.
+ 
+EUR/USD trade: 8=FIX.4.29=12935=834=349=SERVER52=20140122-10:13:57.18056=CLIENT6=1.23514=10017=120=037=139=244=1.23454=155=EUR/USD150=2151=10010=042

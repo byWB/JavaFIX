@@ -1,0 +1,24 @@
+ # default settings for sessions
+  [DEFAULT]
+  ReconnectInterval=1
+  SenderCompID=SERVER
+  FileLogPath=fileLog
+  FileStorePath=fileStore
+  ConnectionType=acceptor
+  LogonTimeout=10
+  LogoutTimeout=10
+  
+  # session definition
+  [SESSION]
+  # inherit ConnectionType, ReconnectInterval and SenderCompID from default
+
+  BeginString=FIX.4.2
+  TargetCompID=CLIENT
+  StartTime=06:00:00
+  EndTime=23:30:00
+  HeartBtInt=20
+  SocketConnectPort=7777
+  SocketAcceptPort=7777
+  SocketConnectHost=127.0.0.1
+  ResetOnLogon=Y
+  

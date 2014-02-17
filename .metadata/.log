@@ -1,0 +1,92 @@
+!SESSION 2014-02-17 15:08:36.848 -----------------------------------------------
+eclipse.buildId=4.3.0.I20130605-2000
+java.version=1.7.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -data C:\Users\WHB\Desktop\testGit\JavaFIX -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -clean
+
+!ENTRY org.eclipse.osgi 2 0 2014-02-17 15:08:39.481
+!MESSAGE The plugin "org.apache.bcel" with the version "5.1.0" and location "reference:file:plugins/org.apache.bcel_5.1.0/" is an old style Eclipse 2.0 plugin with no OSGi bundle manifest.  Support for Eclipse 2.0 style plugins will be removed in a future release. Refer to the migration guide for details.
+
+!ENTRY org.eclipse.osgi 2 0 2014-02-17 15:08:39.617
+!MESSAGE The plugin "org.deltadebugging.ddcore" with the version "1.0.0" and location "reference:file:plugins/org.deltadebugging.ddcore_1.0.0/" is an old style Eclipse 2.0 plugin with no OSGi bundle manifest.  Support for Eclipse 2.0 style plugins will be removed in a future release. Refer to the migration guide for details.
+
+!ENTRY org.eclipse.osgi 2 0 2014-02-17 15:08:39.622
+!MESSAGE The plugin "org.deltadebugging.ddstate" with the version "1.0.0" and location "reference:file:plugins/org.deltadebugging.ddstate_1.0.0/" is an old style Eclipse 2.0 plugin with no OSGi bundle manifest.  Support for Eclipse 2.0 style plugins will be removed in a future release. Refer to the migration guide for details.
+
+!ENTRY org.eclipse.osgi 2 0 2014-02-17 15:08:39.627
+!MESSAGE The plugin "org.deltadebugging.ddstate.launcher" with the version "1.0.0" and location "reference:file:plugins/org.deltadebugging.ddstate.launcher_1.0.0/" is an old style Eclipse 2.0 plugin with no OSGi bundle manifest.  Support for Eclipse 2.0 style plugins will be removed in a future release. Refer to the migration guide for details.
+
+!ENTRY org.eclipse.osgi 2 0 2014-02-17 15:08:39.631
+!MESSAGE The plugin "org.deltadebugging.ddstate.ui" with the version "1.0.0" and location "reference:file:plugins/org.deltadebugging.ddstate.ui_1.0.0/" is an old style Eclipse 2.0 plugin with no OSGi bundle manifest.  Support for Eclipse 2.0 style plugins will be removed in a future release. Refer to the migration guide for details.
+
+!ENTRY org.eclipse.osgi 2 0 2014-02-17 15:08:39.635
+!MESSAGE The plugin "org.deltadebugging.ddstate.visualizer" with the version "1.0.0" and location "reference:file:plugins/org.deltadebugging.ddstate.visualizer_1.0.0/" is an old style Eclipse 2.0 plugin with no OSGi bundle manifest.  Support for Eclipse 2.0 style plugins will be removed in a future release. Refer to the migration guide for details.
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2014-02-17 15:08:42.398
+!MESSAGE [SCR] Found components with duplicated names! Details: 
+Component1 : Component[
+	name = org.eclipse.equinox.p2.transport.ecf
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.p2.transport.ecf.ECFTransportComponent
+	state = Unsatisfied
+	properties = {p2.agent.servicename=org.eclipse.equinox.internal.p2.repository.Transport}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.equinox.p2.core.spi.IAgentServiceFactory]
+	references = null
+	located in bundle = org.eclipse.equinox.p2.transport.ecf_1.0.100.v20120305-0333 [767]
+]
+Component2: Component[
+	name = org.eclipse.equinox.p2.transport.ecf
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.p2.transport.ecf.ECFTransportComponent
+	state = Unsatisfied
+	properties = {p2.agent.servicename=org.eclipse.equinox.internal.p2.repository.Transport}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.equinox.p2.core.spi.IAgentServiceFactory]
+	references = null
+	located in bundle = org.eclipse.equinox.p2.transport.ecf_1.1.0.v20130516-1858 [766]
+]  
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-02-17 15:09:13.593
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-02-17 15:09:13.594
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\WHB'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.archstudio.schematron.core 1 0 2014-02-17 15:09:17.597
+!MESSAGE Schematron Archlight Tool: Initialized at [17/02/14 15:09:17 GMT]
+
+!ENTRY org.archstudio.schematron.core 1 0 2014-02-17 15:09:17.604
+!MESSAGE Schematron Archlight Tool: Xalan version Xalan Java 2.6.0
+
+!ENTRY org.archstudio.schematron.core 1 0 2014-02-17 15:09:17.605
+!MESSAGE Schematron Archlight Tool: Reloading tests at [17/02/14 15:09:17 GMT]
+
+!ENTRY com.google.gdt.eclipse.suite 1 0 2014-02-17 15:30:46.965
+!MESSAGE Registering: com.google.appengine.eclipse.sdkbundle_1.8.8
+
+!ENTRY com.google.gdt.eclipse.suite 1 0 2014-02-17 15:30:47.045
+!MESSAGE Registering: com.google.gwt.eclipse.sdkbundle_2.5.0.v201212122042-rel-r42

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="C:/Users/WHB/Desktop/Projects/FIX/commons-logging-1.1.3/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/WHB/Desktop/Projects/FIX/mina-1.1.4/mina-core-1.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/WHB/Desktop/Projects/FIX/quickfixj/quickfixj-all-1.5.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/WHB/Desktop/Projects/FIX/slf4j-1.7.5/slf4j-api-1.7.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/WHB/Desktop/Projects/FIX/slf4j-1.7.5/slf4j-simple-1.7.5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,12 @@
+20140217-15:55:37: Session FIX.4.2:SERVER->CLIENT schedule is daily, 06:00:00-UTC - 23:30:00-UTC
+20140217-15:55:37: Created session: FIX.4.2:SERVER->CLIENT
+20140217-15:55:57: Session FIX.4.2:SERVER->CLIENT schedule is daily, 06:00:00-UTC - 23:30:00-UTC
+20140217-15:55:57: Created session: FIX.4.2:SERVER->CLIENT
+20140217-15:56:02: Accepting session FIX.4.2:SERVER->CLIENT from /127.0.0.1:20016
+20140217-15:56:02: Acceptor heartbeat set to 20 seconds
+20140217-15:56:02: Received logon
+20140217-15:56:02: Responding to Logon request
+20140217-15:56:02: Rejecting invalid message: quickfix.FieldException: Required tag missing, field=98: 8=FIX.4.29=6835=A34=149=CLIENT52=20140217-15:56:02.93956=SERVER108=30141=Y10=239
+20140217-15:56:02: Reject sent for Message 1: Required tag missing:98
+20140217-15:56:20: Received logout request
+20140217-15:56:20: Sent logout response

@@ -1,0 +1,19 @@
+ # default settings for sessions
+  [DEFAULT]
+  ReconnectInterval=60
+  SenderCompID=CLIENT
+  FileLogPath=fileLog
+  FileStorePath=fileStore
+  ConnectionType=initiator
+  
+ 
+  
+  [SESSION]
+  BeginString=FIX.4.2
+  TargetCompID=SERVER
+  StartTime=06:00:00
+  EndTime=23:30:00
+  HeartBtInt=20
+  SocketConnectPort=7777
+  SocketAcceptPort=7777
+  SocketConnectHost=localhost

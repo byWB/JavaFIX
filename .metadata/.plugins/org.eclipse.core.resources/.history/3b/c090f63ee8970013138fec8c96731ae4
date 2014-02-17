@@ -1,0 +1,151 @@
+import java.util.HashMap;
+import java.util.Map;
+
+import quickfix.Application;
+import quickfix.DoNotSend;
+import quickfix.FieldNotFound;
+import quickfix.IncorrectDataFormat;
+import quickfix.IncorrectTagValue;
+import quickfix.Message;
+import quickfix.RejectLogon;
+import quickfix.Session;
+import quickfix.SessionID;
+import quickfix.SessionNotFound;
+import quickfix.UnsupportedMessageType;
+import quickfix.field.AvgPx;
+import quickfix.field.CumQty;
+import quickfix.field.ExecID;
+import quickfix.field.ExecTransType;
+import quickfix.field.ExecType;
+import quickfix.field.LeavesQty;
+import quickfix.field.OrdStatus;
+import quickfix.field.OrdType;
+import quickfix.field.OrderID;
+import quickfix.field.Price;
+import quickfix.field.Side;
+import quickfix.field.Symbol;
+import quickfix.fix42.ExecutionReport;
+import quickfix.fix42.Logon;
+import quickfix.fix42.MessageCracker;
+import quickfix.fix42.NewOrderSingle;
+import quickfix.fix42.SecurityDefinition;
+
+
+public class FIXApplicationServ extends MessageCracker implements Application {
+
+	private Map<String, Double> priceMap = null;
+	
+	public FIXApplicationServ(){
+		priceMap = new HashMap<String, Double>();
+        priceMap.put("EUR/USD", 1.234);
+	}
+	
+	@Override
+	public void fromAdmin(Message msg, SessionID sessID) throws FieldNotFound,
+			IncorrectDataFormat, IncorrectTagValue, RejectLogon {
+		System.out.println("Successfully called fromAdmin for sessionId : "
+	                + sessID + ", with message: "+msg);
+	}
+
+	@Override
+	public void fromApp(Message msg, SessionID sessID) throws FieldNotFound,
+			IncorrectDataFormat, IncorrectTagValue, UnsupportedMessageType {
+		System.out.println("Successfully called fromApp for sessionId : "
+                + sessID + ", with message: "+msg);
+		
+		//crack message from app
+		crack(msg, sessID);
+	}
+
+	@Override
+	public void onCreate(SessionID sessID) {
+		System.out.println("Successfully called onCreate for sessionId : "
+                + sessID);
+	}
+
+	@Override
+	public void onLogon(SessionID sessID) {
+		System.out.println("Log in from: "+sessID);
+	}
+
+	@Override
+	public void onLogout(SessionID sessID) {
+		System.out.println("Log out from: "+sessID);
+	}
+
+	@Override
+	public void toAdmin(Message msg, SessionID sessID) {
+		System.out.println("Inside toAdmin with message: "+msg+", with sessionID: "+sessID);
+	}
+
+	@Override
+	public void toApp(Message msg, SessionID sessID) throws DoNotSend {
+		System.out.println("Inside toApp with message: "+msg+", with sessionID: "+sessID);
+	}
+
+	// Override the overloaded method onMessage from MessageCracker
+	@Override
+	    public void onMessage(NewOrderSingle message, SessionID sessionID)
+	            throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
+	        System.out.println("Inside onMessage for New Order Single");
+//	        super.onMessage(message, sessionID);
+	        OrdType orderType = message.getOrdType();
+	        Symbol currencyPair = message.getSymbol();
+	        /*
+	         * Assuming that we are directly dealing with Market
+	         */
+	        Price price = null;
+	        if (OrdType.FOREX_MARKET == orderType.getValue()) {
+	            if(this.priceMap.containsKey(currencyPair.getValue())){
+	                price = new Price(this.priceMap.get(currencyPair.getValue()));
+	            } else {
+	                price = new Price(1.4589);
+	            }
+	        }
+	        
+	      //We are hardcoding this to 1, but in real world this may be something like a sequence.
+	        OrderID orderNumber = new OrderID("1");
+	        //Id of the report, a unique identifier, once again this will be somthing like a sequence
+	        ExecID execId = new ExecID("1");
+	        //In this case this is a new order with no exception hence mark it as NEW
+	        ExecTransType exectutionTransactioType = new ExecTransType(ExecTransType.NEW);
+	        //This execution report is for confirming a new Order
+	        ExecType purposeOfExecutionReport =new ExecType(ExecType.FILL);
+	        //Represents status of the order, since this order was successful mark it as filled.
+	        OrdStatus orderStatus = new OrdStatus(OrdStatus.FILLED);
+	        //Represents the currencyPair
+	        Symbol symbol = currencyPair;
+	        //Represents side
+	        Side side = message.getSide();
+	        //What is the quantity left for the day, we will take 100 as a hardcoded value, we can also keep a note of this from say limit module.
+	        LeavesQty leavesQty = new LeavesQty(100);
+	        //Total quantity of all the trades booked in this applicaition, here it is hardcoded to be 100.
+	        CumQty cummulativeQuantity = new CumQty(100);
+	        //Average Price, say make it 1.235
+	        AvgPx avgPx = new AvgPx(1.235);
+	        ExecutionReport executionReport = new ExecutionReport(orderNumber,execId, exectutionTransactioType,
+	                purposeOfExecutionReport, orderStatus, symbol, side, leavesQty, cummulativeQuantity, avgPx);
+	        executionReport.set(price);
+	        try {
+	            Session.sendToTarget(executionReport, sessionID);
+	        } catch (SessionNotFound e) {
+	            e.printStackTrace();
+	        }
+	        
+	    }
+	 
+	    public void onMessage(SecurityDefinition message, SessionID sessionID)
+	            throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
+	        System.out.println("Inside onMessage for SecurityDefinition");
+	        super.onMessage(message, sessionID);
+	    }
+	 
+	    public void onMessage(Logon message, SessionID sessionID)
+	            throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
+	        System.out.println("Inside Logon Message");
+	        super.onMessage(message, sessionID);
+	    }
+	
+	    
+	    
+}
